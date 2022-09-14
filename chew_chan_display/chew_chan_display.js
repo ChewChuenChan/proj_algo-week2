@@ -28,23 +28,31 @@ class SLL {
         return this.head;
     }
 
-// display
-display(){
-    let runner=this.head;
-    let mylist =[];
-    while(runner !==null){
-        console.log(runner.data);
-        mylist.push(runner.data);
-        runner=runner.next
+    // display
+    display(){
+        // varified empty list
+        var mylist =" "; 
+        // edge case: list is empty
+        if(this.head ==null){
+            return "Empty list";
+        }
+        // concatenate the first value in the list
+        mylist += this.head.data;
+        // for the second node, we will add "," + value
+        var runner =this.head.next;
+
+        while(runner !=null){
+            mylist += "," + runner.data;
+            runner=runner.next;
+        }
+        return mylist;
     }
-    return mylist;
-}
-
-
 }
 
 var SLL1= new SLL();
+console.log(SLL1.display());
 SLL1.addFront(18);
+// console.log(SLL1);
 SLL1.addFront(2);
 SLL1.addFront(3.142);
-SLL1.display();
+console.log(SLL1.display());
