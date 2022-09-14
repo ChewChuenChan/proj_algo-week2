@@ -46,14 +46,30 @@ class SLL {
 
     }
 
+    // Front
+    // Write a method to return the value (not the node) at the head of the list. 
+    // If the list is empty, return null.
+    
+    front(){
+        if(this.head == null){
+            return null;
+        }else{
+            return this.head.data;
+        }
+
+    }
+
 }
 var SLL1= new SLL();
 SLL1.addFront(18);
 console.log(SLL1);
+console.log(SLL1.front());
 SLL1.removeFront();
-console.log(SLL1);
+console.log(SLL1.front());
 SLL1.addFront(73);
+SLL1.addFront(5);
 console.log(SLL1);
+console.log(SLL1.front());
 console.log(SLL1.head.next);
 
 
